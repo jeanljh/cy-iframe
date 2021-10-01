@@ -1,0 +1,22 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-mocha": "cypress run --spec 'cypress/integration/mocha/calculator-mocha.js' --headed",
+    "test-bdd": "cypress run --spec 'cypress/integration/common/calculator-bdd.feature' --headed"
+  },
+  "author": "jean",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.7.0",
+    "cypress-cucumber-preprocessor": "^4.0.1"
+  },
+  "dependencies": {
+    "cypress-plugin-snapshots": "^1.4.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
