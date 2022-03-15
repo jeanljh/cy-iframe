@@ -1,5 +1,5 @@
-Feature: Test online calculator scenarios
-	Scenario Outline: Test addition, subtraction, division and CE functionalities
+Feature: Calculator Tests - Cucumber
+	Scenario Outline: Test calculations via key press
 		Given I navigate to the url
 		When I press "<value>"
 		Then I validate that actual result is matched with expected result

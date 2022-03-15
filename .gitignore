@@ -1,4 +1,8 @@
 node_modules
 videos
-snapshots/actual
 snapshots/diff
+snapshots/actual
+results
+screenshots
+public
+index.json

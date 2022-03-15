@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe('Calculator Tests', () => {
+describe('Calculator Tests - Mocha', () => {
     beforeEach(() => {
         cy.fixture('test-data').as('data')
         cy.visit('/')
