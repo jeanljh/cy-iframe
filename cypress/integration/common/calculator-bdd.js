@@ -2,21 +2,23 @@
 
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 
+let id = 0
+
 Given('I navigate to the url', () => {
     cy.visit('/')
-    cy.GetIframe()
+    cy.getIframe()
 })
 
 When('I press {string}', (val) => {
     // perform calculations
-    cy.KeyPress(val)
-    cy.wait(500)
+    cy.keyPress(val)
+    cy.wait(1000)
 })
 
 Then('I validate that actual result is matched with expected result', () => {
-    // check result by visual comparison between current image with base image
-    cy.CompareResult()
+    // check result by visual comparison between actual image with base image
+    cy.get('#fullframe').compareSnapshot(`${id++}`, 0.3)
     // press 'CE' to clear
-    cy.KeyPress('c')
+    cy.keyPress('c')
 })
 

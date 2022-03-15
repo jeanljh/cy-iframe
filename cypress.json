@@ -1,25 +1,12 @@
 {
     "baseUrl": "https://www.online-calculator.com/full-screen-calculator/",
     "defaultCommandTimeout": 30000,
-    "video":true,
-    "videoCompression":32,
-    "videosFolder":"cypress/videos",
-    "videoUploadOnPasses":true,
     "viewportHeight":1080,
     "viewportWidth":1920,
-    "waitForAnimations":true,
-    "watchForFileChanges":true,
-    "chromeWebSecurity": false,
-    "screenshotOnRunFailure":true,
-    "env": {
-      "cypress-plugin-snapshots": {
-        "imageConfig": {
-          "threshold": 0.01
-        }
-      }
-    },
-    "ignoreTestFiles": [
-      "**/__snapshots__/*",
-      "**/__image_snapshots__/*"
-    ]
+    "testFiles": [
+      "**/common/*.{feature,features}",
+      "**/mocha/*"
+    ],
+    "screenshotsFolder": "./cypress/snapshots/actual",
+    "trashAssetsBeforeRuns": true
 }

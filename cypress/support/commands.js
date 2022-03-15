@@ -24,22 +24,25 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+const compareSnapshotCommand = require('cypress-visual-regression/dist/command');
+compareSnapshotCommand();
+
 // -- Get iframe --
-Cypress.Commands.add('GetIframe', () => {
+Cypress.Commands.add('getIframe', () => {
     cy.get('#fullframe').as('iframe').then(e => {
         const canvas = e.contents().find('#canvas')
         cy.wrap(canvas).as('canvas')
     })
 })
 // -- Key press --
-Cypress.Commands.add('KeyPress', keys => {
+Cypress.Commands.add('keyPress', keys => {
     keys.split('').forEach(k => {
         const code = k.charCodeAt(0)
         cy.get('body').trigger('keypress', { keyCode: code });
     });
 })
 // -- Mouse click --
-Cypress.Commands.add('MouseClick', keys => {
+Cypress.Commands.add('mouseClick', keys => {
     keys.split('').forEach(k => {
         switch (k) {
             case '0':
@@ -92,8 +95,4 @@ Cypress.Commands.add('MouseClick', keys => {
                 break;
         }
     });
-})
-// -- Compare result --
-Cypress.Commands.add('CompareResult', () => {
-    cy.get('@iframe').toMatchImageSnapshot()
 })

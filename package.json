@@ -1,20 +1,18 @@
 {
   "name": "calculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "handling iframe in calculator where entire calculator GUI is an embedded iframe",
   "main": "index.js",
   "scripts": {
-    "test-mocha": "cypress run --spec 'cypress/integration/mocha/calculator-mocha.js' --headed",
-    "test-bdd": "cypress run --spec 'cypress/integration/common/calculator-bdd.feature' --headed"
+    "test-mocha": "cypress run -s **/calculator-mocha.js",
+    "test-bdd": "cypress run -s **/calculator-bdd.feature"
   },
   "author": "jean",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^7.7.0",
-    "cypress-cucumber-preprocessor": "^4.0.1"
-  },
-  "dependencies": {
-    "cypress-plugin-snapshots": "^1.4.4"
+    "cypress": "^9.5.2",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-visual-regression": "^1.6.3"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true

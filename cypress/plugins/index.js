@@ -17,11 +17,10 @@
  */
 
 const cucumber = require('cypress-cucumber-preprocessor').default
-
-const { initPlugin } = require('cypress-plugin-snapshots/plugin');
+const getCompareSnapshotsPlugin = require('cypress-visual-regression/dist/plugin')
 
 module.exports = (on, config) => {
   on('file:preprocessor', cucumber())
-  initPlugin(on, config);
+  getCompareSnapshotsPlugin(on, config)
   return config;
 };
